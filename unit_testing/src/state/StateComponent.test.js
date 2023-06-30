@@ -1,10 +1,10 @@
-import { render, fireEvent} from "@testing-library/react";
-import StateComponent from "./StateComponent";
+import { render, fireEvent} from '@testing-library/react';
+import StateComponent from './StateComponent';
 
-test("updates state correctly", () => {
-    const { getByTest } = render(<StateComponent />);
-    const button = getByTest("Click me");
+test('updates state correctly', () => {
+    const { getByText } = render(<StateComponent/>);
+    const button = getByText('Click me');
     fireEvent.click(button);
-    expect(getByTest("Clicked!")).toBeInTheDocument();
+    expect(getByText('Clicked!')).toBeInTheDocument();
 
 });
